@@ -1,0 +1,25 @@
+:root{
+    --btn-bg: #fff;
+    --btn-hover-bg: #ddd;
+    --btn-border-color: #000;
+}
+.test{
+    color: white;
+    background: #000;
+}
+.card-text{
+    font-weight: normal;
+    line-height: 1.5;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    overflow: hidden;
+}
+.btn-custome{
+    background-color: var(--btn-bg);
+    border: 1px solid var(--btn-border-color);
+}
+.btn-custome:hover{
+    background-color: var(--btn-hover-bg);
+    border: 1px solid var(--btn-border-color);
+}
