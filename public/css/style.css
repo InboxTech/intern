@@ -1,0 +1,81 @@
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+}
+.card-main-body{
+    /* margin-top: 40px; */
+    padding-top: 50px;
+}
+.card-img-top{
+    height: 200px;
+}
+
+.col{
+    padding: 20px;
+}
+.btn-primary{
+    color: black !important;
+    background-color: blanchedalmond !important;
+    border-color: black;
+}
+
+
+.btn-primary:hover{
+    transform: scale(1.05);
+   
+}
+.card{
+    border-color: black;
+    
+    
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px  0 #EEEEEE;
+}
+.cont
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 200px;
+
+}
+.container-fluid{
+    align-items: center;
+    text-align: center;
+}
+.footer-txt{
+    background-color:black ;
+    color: antiquewhite;
+
+}
+.txt
+{
+    color: #EEEEEE;
+    text-decoration: none;
+}
+.text-danger{
+color: gray !important;
+}
+.copy1{
+padding: 20px;
+display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.bg-body-tertiary{
+    background-color:black ;
+    color: #EEEEEE;
+    
+}
+.nav-link{
+    color: #EEEEEE !important;
+}
+.nav-link:visited {
+color: chartreuse !important;
+}
+.btn-outline-success{
+    color: #EEEEEE;
+    border-color: bisque;
+}
