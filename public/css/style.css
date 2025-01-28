@@ -1,0 +1,44 @@
+.navbar{
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+}
+
+
+.c-padding {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.card-img-top {
+    height: 190.93px !important;
+}
+
+.card-title {
+    height: 24px !important;
+}
+
+.card-text {
+    height: 72px !important;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    overflow: hidden;
+
+}
+
+.swiper .card {
+    border: 1px dashed black;
+}
+
+/* footer */
+
+.bg-body-tertiary {
+    background-color: #EEEEEE !important;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
