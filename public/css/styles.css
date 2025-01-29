@@ -1,5 +1,8 @@
 .navbar {
     margin-bottom: 20px;
+    position: fixed !important;
+    z-index: 1;
+    width: 100%;
 }
 
 /* .container {
@@ -29,6 +32,13 @@
     padding: 0px 10px;
 }
 
+.signin {
+    margin: 0 3px;
+}
+
+.container .card-section {
+    padding-top: 100px;
+}
 
 .card {
     padding: 10px;
@@ -56,6 +66,13 @@
     justify-content: space-between;
 }
 
+.card-text {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:3;
+    display: -webkit-box;
+    overflow: hidden;
+}
+
 .row{
     gap: 20px;
     margin-bottom: 10px;
@@ -81,3 +98,124 @@
     background-color:rgb(183, 72, 72) !important;
     border-color: black !important ;
 }
+
+.btn:hover {
+    background-color:rgb(183, 72, 72,0.7) !important;
+    color: black !important;
+}
+
+
+.signup-section{
+    background: linear-gradient(0deg, rgb(50, 43, 87) 0%, rgb(100, 115, 191) 86%);
+    background-attachment: fixed;
+    margin:0;
+    font-family: 'Poppins', sans-serif; 
+    justify-content: center !important;
+    justify-items: center !important;
+    background-image: url('../images/main/unsplash-NuFUbftUu_s-unsplash.jpg');
+    background-size: cover;
+    position: relative;
+    padding: 1px;
+}
+
+
+#form{
+    width:400px;
+    margin:8vh auto 0 auto;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding:30px;
+}
+
+h1{
+    text-align: center;
+    color:black;
+}
+
+#form button{
+    background-color: black;
+    color:white;
+    border: 1px solid violet;
+    border-radius: 15px;
+    padding:10px;
+    margin:20px 0px;
+    cursor:pointer;
+    font-size:20px;
+    width:100% !important;
+}
+
+
+
+.input-group{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.input-group input{
+    border-radius: 5px;
+    font-size:20px;
+    margin-top:5px;
+    padding:10px;
+    border:1px solid blue ;
+}
+
+.input-group input{
+    outline:0;
+    width: 90%;
+}
+
+.input-group input:focus{
+    outline:0;
+    width: 320px;
+}
+
+.input-group.error{
+    color:red;
+    font-size:16px;
+    margin-top: 5px;
+}
+
+.input-group.success input{
+    border-color: green;
+}
+
+.input-group.error input{
+    border-color:red;
+}
+
+.toggle-btn{
+    margin: -30px !important;
+}
+
+.intgrp{
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.forgot-section{
+  width: 100%;
+    margin: -5px auto;
+    border-radius: 5px;
+    padding: 1px;
+    background-image: url('../images/signinbg.jpg');
+    background-size: cover;
+    backdrop-filter: blur(3px);
+}
+
+.input-group{
+  display:flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.signin-section,
+.signup-section {
+    width: 100%;
+        background-image: url('../images/signinbg.jpg');
+        background-size: cover;
+        backdrop-filter: blur(3px);
+    }
