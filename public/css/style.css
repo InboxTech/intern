@@ -1,12 +1,74 @@
 :root{
-    --btn-bg: #fff;
+    --btn-bg: #080606;
     --btn-hover-bg: #ddd;
-    --btn-border-color: #000;
+    --btn-border-color: #4a4fe3;
 }
-.test{
-    color: white;
-    background: #000;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #c7c7ff;
+  justify-content: center;
+  align-items: left;
+  height: 100vh;
+  margin: 0;
 }
+.navbar{
+  padding-top: 4px;
+  padding-bottom: 4px;
+  
+}
+h4{
+  text-align: left;
+  color: #000000;
+  
+}
+  .card-container {
+    width: 30%;
+    height: 30%;
+    max-width: 300px;
+    margin: auto;
+    display: inline-table;
+  }
+  .card {
+    background: #ebebeb;
+    display:grid;
+    grid-gap: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(129, 78, 78, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .card-content {
+    padding: 40px;
+    
+  }
+  .card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #000000;
+  }
+  
+  .card-description {
+    font-size: 1em;
+    color: #000000;
+    margin-bottom: 15px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:3;
+    display: -webkit-box;
+    overflow: hidden;
+  }
+ 
 .card-text{
     font-weight: normal;
     line-height: 1.5;
@@ -15,11 +77,38 @@
     display: -webkit-box;
     overflow: hidden;
 }
+card button {
+    text-align: center !important;
+    background: #99ddff;
+}
 .btn-custome{
     background-color: var(--btn-bg);
     border: 1px solid var(--btn-border-color);
+    color :#fff6f6;
+    margin: auto;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 10px
 }
 .btn-custome:hover{
-    background-color: var(--btn-hover-bg);
+    background-color: #20c056;
+    color:#131212;
     border: 1px solid var(--btn-border-color);
 }
+.copyright{
+    text-align: center;
+    color: #b9b9e0;
+    background-color: #000;
+    padding-top: 5px;
+    padding-bottom:5px;
+  }
+  .bg-body-tertiary{
+    background-color: #d4b4f2 !important;
+  }
+  .text-uppercase{
+       color: #000;
+  }
+  .text-reset{
+      color: #000000 !important;
+  }
