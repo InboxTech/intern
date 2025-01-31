@@ -10,9 +10,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    
 }
 
-.sup-body{
+.sup-body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +21,7 @@
     background-color: #f4f4f4;
 }
 
-.signup-container{
+.signup-container {
     background: #ffffff;
     padding: 2rem;
     border-radius: 8px;
@@ -92,7 +93,7 @@
 
 /* signUp */
 
-.sin-body{
+.sin-body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -184,7 +185,7 @@
 
 /* forget Password */
 
-.forpass-body{
+.forpass-body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -262,8 +263,22 @@
     text-decoration: underline;
 }
 
- 
+
 /* card */
+
+/* .card-container{
+    display: flex;
+    justify-content: center;
+    margin: 100px;
+} */
+.card-container{
+    
+    justify-content: center !important;
+    padding-left: 143px !important;
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+}
+
 
 .c-padding {
     padding-top: 10px;
@@ -290,7 +305,7 @@
 
 .btn-style {
     margin-right: 20px;
-    
+
 }
 
 .btn-margin {
@@ -302,10 +317,61 @@
     border: 1px solid black !important;
 }
 
-.txt-color{
+.txt-color {
     color: black;
 }
 
+/* swiper */
+
+/* Reset default styles */
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.s-container {
+    max-width: 100vw;
+    margin: 0 auto;
+    padding-top: 80px; /* Adjusted spacing */
+}
+
+.c-swiper {
+    position: relative;
+    width: 100vw;
+    height: 100vh; /* Adjusted to avoid empty space */
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 /* footer */
 
@@ -320,4 +386,80 @@
     margin-top: -50px;
 }
 
+/* testimonial */
 
+
+ .test_container{
+        position: relative;
+        height: 100%;
+      background: #ffffff;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .test_container .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .test_container .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 450px !important;
+    }
+
+    .test_container .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .test_container .swiper-wrapper{
+        margin-top: -70px;
+    }
+    
+/* testmonial card */
+
+.test-card .card{
+    margin: 20px;
+
+}
+
+.test-card .card-header{
+    display: flex;
+    justify-content: start;
+}
+
+.test-card .card-title{
+    padding: 9px;
+}
+
+.test-card .bi .bi-person-circle{
+    margin-left: -14px;
+}
+
+.test-card .star{
+    margin-top: -10px;
+}
+
+.test-card .card-text{
+    height: 110px !important; 
+    padding: 10px !important;
+}
+
+
+
+
+    /* Map */
+    #map {
+        height: 500px;
+        width: 100%;
+    }
