@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="./public/font/css/all.min.css">
 </head>
 <body>
+    <!-- header -->
     <header>
+        <!-- nav1 -->
         <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
          <div class="container text-light">
              <div class="w-100 d-flex justify-content-between">
@@ -20,7 +22,7 @@
                      <i class="fa-solid fa-phone mx-2"></i>
                      <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>                        
                  </div>
-                 <div class="icon">
+                 <div class="icon1">
                      <a class="text-light" href="https://www.facebook.com/" target="_blank" rel="sponsored">
                          <i class="fa-brands fa-facebook fa-sm fa-fw me-2"></i>
                      </a>
@@ -38,6 +40,7 @@
          </div>
         </nav>
 
+        <!-- nav2 -->
         <nav class="navbar navbar-expand-lg navbar-light shadow">
          <div class="container d-flex justify-content-between align-items-center">
  
@@ -93,7 +96,7 @@
      </nav>  
      </header>
 
-
+     <!-- main -->
      <main>
         <section class="cont-sec">
             <div class="contact">
@@ -102,6 +105,7 @@
             </div>
         </section>
 
+        <!-- map -->
         <section class="map">
             <div class="container p-5">
                 <div class="title text-center"><h2><b>Map</b></h2></div>
@@ -109,8 +113,9 @@
                </div>
         </section>
 
+        <!-- form -->
         <div class="container py-5">
-            <div class="row py-5">
+            <div class="row py-6">
                 <form class="col-md-9 m-auto" method="post" role="form">
                     <div class="row">
                         <div class="form-group col-md-6 mb-3">
@@ -141,6 +146,7 @@
      </main>
 
 
+     <!-- footer -->
      <footer class="bg-dark" id="tempaltemo_footer" >
         <div class="container">
             <div class="row">
@@ -233,11 +239,12 @@
         </div>
     </footer>
 
+    <!-- script -->
     <script src="./public/js/bootstrap.bundle.min.js"></script>
     <script src="./public/js/swiper-bundle.min.js"></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_ACTUAL_API_KEY&callback=initMap" async defer></script>
-    <script src="AIzaSyBJTjmJ-nIEI7dUKf8d8_gWlIb79rrzjp8"></script>
+    <!-- map script -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD55Yc0lAfY9G9rJlHkRKijh-X1W0PEESA&callback=initMap" async defer></script>
 
     <script>
         let map;
@@ -245,15 +252,15 @@
         function initMap() {
             // Initialize the map
             map = new google.maps.Map(document.getElementById("map"), {
-                center: { lat: 22.5726, lng: 88.3639 }, // Example: Kolkata, India
+                center: { lat: 22.3072, lng: 73.1812 }, // Vadodara, Gujarat, India
                 zoom: 12,
             });
 
             // Add a marker
             new google.maps.Marker({
-                position: { lat: 22.5726, lng: 88.3639 },
+                position: { lat: 22.3072, lng: 73.1812 },
                 map,
-                title: "Kolkata, India",
+                title: "Vadodara, Gujarat, India",
             });
 
             // Fix map resizing issues
