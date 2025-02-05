@@ -388,7 +388,7 @@ text-decoration-none {
   .h-100:hover{
     background: #198754;
   }
-  .hi:hover{
+  .h-100:hover .hi{
     background: #e3ebe7;
   }
   .shadow {
