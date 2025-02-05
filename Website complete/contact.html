@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>Conatct Us</title>
     <link rel="stylesheet" href="./public/css/style.css">
     <link rel="stylesheet" href="./public/css/bootstrap.min.css">
     <link rel="stylesheet" href="./public/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="./public/fonts/css/all.min.css">
+    <link rel="stylesheet" href="./public/font/css/all.min.css">
 </head>
 <body>
     <header>
@@ -56,13 +56,13 @@
                              <a class="nav-link" href="index.html">Home</a>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link" href="aboutus.html">About</a>
+                             <a class="nav-link" href="about.html">About</a>
                          </li>
                          <li class="nav-item">
                              <a class="nav-link" href="shop.html">Shop</a>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link" href="contactus.html">Contact</a>
+                             <a class="nav-link" href="contact.html">Contact</a>
                          </li>
                      </ul>
                  </div>
@@ -88,136 +88,63 @@
                      </a>
                  </div>
              </div>
+ 
          </div>
      </nav>  
      </header>
 
+
      <main>
-        <div class="aboutus">
-            <div class="about">
-                <div class="abt-content">
-                    <h2>About Us</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, repudiandae earum sequi mollitia dolorum animi est rem necessitatibus dolor! 
-                       Fugit tempore nostrum modi. Excepturi quam sapiente, voluptatem quaerat dicta eligendi?</p>
-                </div>
-                <div class="image-content col-3">
-                    <img src="./public/images/about-hero.svg" alt="aboutus">
-                </div>
+        <section class="cont-sec">
+            <div class="contact">
+                <h1 class="cont-txt">Contact Us</h1>
+                <p>Proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet.</p>
+            </div>
+        </section>
+
+        <section class="map">
+            <div class="container p-5">
+                <div class="title text-center"><h2><b>Map</b></h2></div>
+                <div id="map"></div>
+               </div>
+        </section>
+
+        <div class="container py-5">
+            <div class="row py-5">
+                <form class="col-md-9 m-auto" method="post" role="form">
+                    <div class="row">
+                        <div class="form-group col-md-6 mb-3">
+                            <label for="inputname">Name</label>
+                            <input type="text" class="form-control mt-1" id="name" name="name" pattern="[A-Za-z]{1-10}" placeholder="Name" required>
+                        </div>
+                        <div class="form-group col-md-6 mb-3">
+                            <label for="inputemail">Email</label>
+                            <input type="email" class="form-control mt-1" id="email" name="email" pattern=".+@gmail\.com" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputsubject">Subject</label>
+                        <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputmessage">Message</label>
+                        <textarea class="form-control mt-1" id="message" name="message" placeholder="Message" required rows="8"></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col text-end mt-2">
+                            <button type="submit" class="btn btn-success btn-md px-2">Let's Talk</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-
-        <section class="service pt-5" >
-            <h2 class="ser">Our Services</h2>
-            <p class="ser">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet.</p>
-        <div class="container text-center">
-            <div class="cardser-section">
-              <div class="row">
-                <div class="col">
-                  <div class="card text-center" style="width: 15rem">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-truck"></i>
-                    </div>
-                    <div class="icon-txt text-center">
-                        <h5>Delivery Services</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                    <div class="card text-center" style="width: 15rem">
-                      <div class="card-icon">
-                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                      </div>
-                      <div class="icon-txt text-center">
-                          <h5>Shipping & Return</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card text-center" style="width: 15rem">
-                      <div class="card-icon">
-                        <i class="fa-solid fa-percent"></i>
-                      </div>
-                      <div class="icon-txt text-center">
-                          <h5>Promotion</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card text-center" style="width: 15rem">
-                      <div class="card-icon">
-                        <i class="fa-solid fa-user"></i>
-                      </div>
-                      <div class="icon-txt text-center">
-                          <h5>24 Hour Service</h5>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="brand">
-            <div class="brand-section">
-                <div class="brand-content">
-                    <h2>Our Brands</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
-            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <!-- Slide 1 -->
-                    <div class="carousel-item active">
-                        <div class="row g-0">
-                            <div class="col-md-2 p-0">
-                                <img src="./public/images/brand_01.png" class="img-fluid" alt="Image 1">
-                            </div>
-                            <div class="col-md-2 p-0">
-                                <img src="./public/images/brand_02.png" class="img-fluid" alt="Image 2">
-                            </div>
-                            <div class="col-md-2 p-0">
-                                <img src="./public/images/brand_03.png" class="img-fluid" alt="Image 3">
-                            </div>
-                            <div class="col-md-2 p-0">
-                                <img src="./public/images/brand_04.png" class="img-fluid" alt="Image 4">
-                            </div>
-                        </div>
-                    </div>
-            
-                  <!-- Slide 2 -->
-                  <div class="carousel-item">
-                    <div class="row g-0">
-                        <div class="col-md-2">
-                            <img src="./public/images/main/brand_01.png" class="img-fluid" alt="Image 1">
-                        </div>
-                        <div class="col-md-2 ">
-                            <img src="./public/images/main/brand_02.png" class="img-fluid" alt="Image 2">
-                        </div>
-                        <div class="col-md-2">
-                            <img src="./public/images/main/brand_03.png" class="img-fluid" alt="Image 3">
-                        </div>
-                        <div class="col-md-2">
-                            <img src="./public/images/main/brand_04.png" class="img-fluid" alt="Image 4">
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-            </div>
-        </section>
-              
      </main>
 
-     <footer class="bg-dark" id="footer" >
+
+     <footer class="bg-dark" id="tempaltemo_footer" >
         <div class="container">
             <div class="row">
-                
-                
+
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-success border-bottom pb-3 border-light logo">Zay Shop</h2>
                     <ul class="list-unstyled text-light footer-link-list">
@@ -267,17 +194,17 @@
                     <div class="w-100 my-3 border-top border-light"></div>
                 </div>
                 <div class="col-auto me-auto">
-                    <ul class="list-inline text-left footer-icons">
-                        <li class="list-inline-item border border-light rounded-circle text-center">
+                    <ul class="list-inline text-left footer-icons" id="list-inline">
+                        <li class="list-inline-item border border-light rounded-circle text-center" id="list-inline-item">
                             <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fa-brands fa-facebook fa-lg fa-fw"></i></a>
                         </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
+                        <li class="list-inline-item border border-light rounded-circle text-center" id="list-inline-item">
                             <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fa-brands fa-instagram fa-lg fa-fw"></i></a>
                         </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
+                        <li class="list-inline-item border border-light rounded-circle text-center" id="list-inline-item">
                             <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fa-brands fa-twitter fa-lg fa-fw"></i></a>
                         </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
+                        <li class="list-inline-item border border-light rounded-circle text-center" id="list-inline-item">
                             <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin fa-lg fa-fw"></i></a>
                         </li>
                     </ul>
@@ -308,6 +235,33 @@
 
     <script src="./public/js/bootstrap.bundle.min.js"></script>
     <script src="./public/js/swiper-bundle.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_ACTUAL_API_KEY&callback=initMap" async defer></script>
+    <script src="AIzaSyBJTjmJ-nIEI7dUKf8d8_gWlIb79rrzjp8"></script>
+
+    <script>
+        let map;
+
+        function initMap() {
+            // Initialize the map
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 22.5726, lng: 88.3639 }, // Example: Kolkata, India
+                zoom: 12,
+            });
+
+            // Add a marker
+            new google.maps.Marker({
+                position: { lat: 22.5726, lng: 88.3639 },
+                map,
+                title: "Kolkata, India",
+            });
+
+            // Fix map resizing issues
+            window.addEventListener("resize", () => {
+                google.maps.event.trigger(map, "resize");
+            });
+        }
+    </script>
 
 </body>
 </html>
