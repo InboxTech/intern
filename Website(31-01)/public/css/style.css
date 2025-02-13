@@ -115,6 +115,7 @@ body {
 .input-group-text{
     background-color: green !important;
     color: white !important;
+    cursor: pointer;
 }
 
 #list-inline-item:hover{

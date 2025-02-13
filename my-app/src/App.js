@@ -5,11 +5,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "swiper/css/thumbs";
 
 import "./App.css";
 
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { FreeMode, Navigation, Pagination, Thumbs, Keyboard, Mousewheel, Autoplay } from "swiper/modules";
 
 export default function App() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -22,9 +23,15 @@ export default function App() {
         }}
         spaceBetween={10}
         navigation={true}
+        pagination={{ clickable: true }}
         thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Navigation, Thumbs]}
+        modules={[FreeMode, Navigation, Pagination, Thumbs, Keyboard, Mousewheel, Autoplay]}
+        keyboard={{ enabled: true }}
+        mousewheel={{ forceToAxis: true }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        loop={true}
         className="mySwiper2"
+        tabIndex={0} // Ensure focus for keyboard navigation
         >
           <SwiperSlide>
             <img src="/images/image 1.jpg" />

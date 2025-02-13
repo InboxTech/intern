@@ -10,6 +10,12 @@
     background-color: black !important;
 }
 
+.button a{
+    text-decoration: none;  
+    color: inherit;         
+    display: block; 
+}
+
 .container{
     padding: 10px;
     align-items: center;
@@ -232,6 +238,11 @@ h1{
     background-size: cover;
 }
 
+.butn a{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
 
 
 /* Swiper CSS */
@@ -320,11 +331,17 @@ body {
     padding-bottom: 50px !important;
 }
 
-
     /* Map Css */
 
 #map {
     height: 300px;
     width: 100%;
     padding-bottom: 30px;
+}
+
+/* Footer CSS */
+
+.social-media a{
+    text-decoration: none;
+    color: inherit;
 }
