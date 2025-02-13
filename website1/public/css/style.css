@@ -1,0 +1,273 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  /* font-size: 20px;
+   */
+}
+
+/* Navbar */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.navbar-nav .nav-link {
+  font-size: 1rem;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+}
+.hero-section .swiper {
+  width: 100%;
+  height: 450px;
+  margin-top: 0px;
+}
+.hero-section .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Categories */
+.categories {
+  background-color: #f8f9fa;
+}
+.categories img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border: 10px;
+  border-color: black !important;
+  padding: 5px;
+}
+.categories p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Featured Products */
+.featured-products {
+  background-color: #eef1f6;
+  padding: 0% !important;
+}
+.featured-products img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  /* border-radius: 10px; */
+}
+.featured-products p {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: #212529;
+  color: #ffffff;
+  padding-top: 20px;
+  font-size: larger;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.swiper-slide .info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #eeeeee;
+}
+.swiper-slide .info p {
+  /* font-size: 15px; */
+  /* font-weight: 400; */
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+.swiper-slide .info h1 {
+  text-align: center;
+  /* font-size: 45px;
+  font-weight: 600; */
+  margin-bottom: 25px;
+}
+
+.swiper-slide img {
+  display: block;
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+}
+.footer-txt {
+  background-color: black;
+  color: antiquewhite;
+}
+.text-danger {
+  color: gray !important;
+}
+.copy1 {
+  padding: 40px;
+  display: flex;
+  gap: 20px;
+  /* justify-content: center; */
+}
+.txt {
+  color: #eeeeee;
+  text-decoration: none;
+}
+.bg-body-tertiary {
+  background-color: black;
+  color: #eeeeee;
+}
+.nav-link {
+  color: #eeeeee !important;
+}
+.nav-link:visited {
+  color: chartreuse !important;
+}
+.btn-outline-success {
+  color: #eeeeee;
+  border-color: bisque;
+}
+.cont {
+  display: flex;
+  justify-content: space-around;
+  /* margin: 0 10px; */
+}
+.mail .input-group input {
+  border-radius: 0;
+  border: 1px solid #ccc;
+  margin: 40px 0;
+}
+
+.mail .btn-danger {
+  background-color: green !important;
+  border-radius: 0;
+  margin: 40px;
+  border-color: green;
+}
+.mail {
+  display: flex;
+  justify-content: space-around;
+}
+.container-fluid {
+  background-color: rgb(22, 36, 41);
+  padding: 20px;
+  margin-bottom: 0;
+  color: white;
+}
+.mb-3 {
+  width: 400px;
+  border-radius: 10px !important;
+}
+.container1 {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 10px 50px;
+}
+.card-title {
+  padding: 10px 0 0 0;
+  font-weight: bold;
+}
+.card-text {
+  font-weight: lighter;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.row {
+  padding-top: 20px;
+}
+.col-md-4 p {
+  margin: 0;
+  padding: 0;
+}
+.featured-products py-5 bg-light {
+}
+
+.top-bar {
+  background: white;
+  color: black;
+  padding: 10px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  /* margin: 20px;
+  margin-right: 15px; */
+}
+.top-bar a {
+  color: black;
+  /* margin-right: 15px; */
+  /* display: flex;
+  justify-content: space-between; */
+}
+button {
+  padding: 15px 30px;
+  color: white;
+  background-color: green;
+  margin: 10px;
+}
+.hero_section {
+  /* background-image: url(MAIN.jpg); */
+  min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text_container {
+  color: white;
+  max-width: 900px;
+  margin: 80px 100px;
+  justify-content: center;
+  z-index: 2;
+  font-size: 50px;
+  text-align: center;
+}
+
+.welcome-box {
+  justify-content: center;
+  padding: 10px;
+  display: inline-block;
+  /* background-color: #ffe6f0; */
+  background-color: black;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  min-height: fit-content;
+  color: #ff497c;
+  text-align: center;
+  max-width: fit-content;
+}
+
+.welcome-box .highlight {
+  font-weight: bold;
+  color: #ff497c; /* You can change this color to match your theme */
+}
+
+.welcome-box p {
+  margin: 0;
+}
+
+.text_container h1 {
+  text-align: center;
+}

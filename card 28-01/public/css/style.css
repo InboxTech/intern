@@ -1,0 +1,184 @@
+/* this is a index page start */
+
+
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+}
+.card-main-body {
+  /* margin-top: 40px; */
+  padding-top: 80px;
+}
+.card-img-top {
+  height: 200px;
+}
+
+.col {
+  padding: 20px;
+}
+.btn-primary {
+  color: black !important;
+  background-color: blanchedalmond !important;
+  border-color: black;
+}
+.sign_in {
+  margin: 10px;
+  padding: 5px 9px 5px 9px;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+.card {
+  border-color: black;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px 0 #eeeeee;
+}
+.cont {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 200px;
+}
+.container-fluid {
+  align-items: center;
+  text-align: center;
+}
+.footer-txt {
+  background-color: black;
+  color: antiquewhite;
+}
+.txt {
+  color: #eeeeee;
+  text-decoration: none;
+}
+.text-danger {
+  color: gray !important;
+}
+.copy1 {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.bg-body-tertiary {
+  background-color: black;
+  color: #eeeeee;
+}
+.nav-link {
+  color: #eeeeee !important;
+}
+.nav-link:visited {
+  color: chartreuse !important;
+}
+.btn-outline-success {
+  color: #eeeeee;
+  border-color: bisque;
+}
+/* this is a index page end */
+
+/* this is a sign in page start */
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+.sin-body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fbeaeb;
+}
+.sin-header {
+  color: #fbeaeb;
+}
+.sin-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 430px;
+  width: 100%;
+  background-color: #2f3c7e;
+  border-radius: 7px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+/* .container .registration {
+    display: none;
+  }
+  #check:checked ~ .registration {
+    display: block;
+  }
+  #check:checked ~ .login {
+    display: none;
+  } */
+.sin-container .page {
+  padding: 2rem;
+}
+
+.page header {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.page input {
+  height: 60px;
+  width: 100%;
+  padding: 0 15px;
+  font-size: 17px;
+  margin-bottom: 1.3rem;
+  border: 1px solid white;
+  border-radius: 6px;
+  outline: none;
+}
+
+.f-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page input:hover {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 01.3);
+}
+.page a {
+  font-size: 16px;
+  color: pink;
+  text-decoration: none;
+}
+.page a:hover {
+  text-decoration: underline;
+  color: #fbeaeb;
+}
+
+.page input.button {
+  color: black;
+  background-color: #fbeaeb;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 1.7rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.page input.button:hover {
+  background-color: pink;
+}
+.signup {
+  font-size: 17px;
+  text-align: center;
+  color: pink;
+}
+.signup label {
+  color: pink;
+  cursor: pointer;
+}
+.signup label:hover {
+  text-decoration: underline;
+  color: #fbeaeb;
+}
+
+/* this is a sign in page end */
