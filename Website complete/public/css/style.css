@@ -8,7 +8,7 @@
 }
 
 .nav-item .nav-link:hover{
-    color: green;
+    color: #59ab6e;
 }
 
 * {
@@ -70,12 +70,12 @@ body {
 }
 
 .a-txt{
-    color: green;
+    color: #59ab6e;
 }
 
 .text-content h2 {
     font-size: 2.5rem;
-    color: green;
+    color: #59ab6e;
 }
 
 .txt-content h2 {
@@ -104,16 +104,16 @@ body {
 /* Swiper Navigation */
 .swiper-button-next,
 .swiper-button-prev {
-    color: green !important;
+    color: #59ab6e !important;
     border-radius: 5% !important;
 }
 
 .swiper-pagination .swiper-pagination-bullet-active{
-    background-color: green !important;
+    background-color: #59ab6e !important;
 }
 
 .input-group-text{
-    background-color: green !important;
+    background-color: #59ab6e !important;
     color: white !important;
 }
 
@@ -204,7 +204,7 @@ body {
 
 .aboutus{
     height: 450px;
-    background-color: green;
+    background-color: #59ab6e;
 }
 
 .about{
@@ -247,11 +247,11 @@ body {
     top: 35%; 
     left: 50%;
     transform: translate(-50%, -50%); 
-    color: green;
+    color: #59ab6e;
 }
 
 #card2:hover{
-    background-color: green !important;
+    background-color: #59ab6e !important;
     color: white !important;
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2), 0 20px 30px rgba(0, 0, 0, 0.2);
 }
