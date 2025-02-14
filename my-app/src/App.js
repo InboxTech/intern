@@ -28,7 +28,7 @@ export default function App() {
         modules={[FreeMode, Navigation, Pagination, Thumbs, Keyboard, Mousewheel, Autoplay]}
         keyboard={{ enabled: true }}
         mousewheel={{ forceToAxis: true }}
-        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        autoplay={{ delay: 4000, disableOnInteraction: false }}
         loop={true}
         className="mySwiper2"
         tabIndex={0} // Ensure focus for keyboard navigation
