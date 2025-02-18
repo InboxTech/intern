@@ -19,7 +19,7 @@ const Testimonial = () => {
       <img src={Quote} className="quote bottom-quote" alt="" />
     </blockquote>
 
-  <Splide options={{ perPage: 1, type: 'loop', speed: 2000, autoplay: true }}>
+  <Splide options={{ perPage: 1, type: 'loop', speed: 3000, autoplay: true }}>
     {reviews.map((review) => (
       <SplideSlide key={review.id}>
         <img src={review.image} className='review-img' alt="" />
