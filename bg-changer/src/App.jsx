@@ -1,8 +1,7 @@
 import { useState } from "react"
 
-
 function App() {
-  const [color, setColor] = useState("olive")
+  const [color, setColor] = useState("black")
 
   return (
     <div className="w-full h-screen duration-200"
@@ -70,5 +69,6 @@ function App() {
     </div>
   )
 }
+
 
 export default App
