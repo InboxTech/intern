@@ -13,20 +13,16 @@ const Header = () => {
 
         {/* Navigation Links */}
         <nav className="hidden md:flex space-x-6">
-          <a href="#" className="text-white hover:text-blue-600"
-          onClick={() => alert("Flights! ")}>
+          <a href="/" className="text-white hover:text-blue-600">
             Flights
           </a>
-          <a href="#" className="text-white hover:text-blue-600"
-          onClick={() => alert("Hotels !")}>
+          <a href="/" className="text-white hover:text-blue-600">
             Hotels
           </a>
-          <a href="#" className="text-white hover:text-blue-600"
-          onClick={() => alert("Car hire !")}>
+          <a href="/" className="text-white hover:text-blue-600">
             Car Hire
           </a>
-          <a href="#" className="text-white hover:text-blue-600"
-          onClick={() => alert("Deals !")}>
+          <a href="/" className="text-white hover:text-blue-600">
             Deals
           </a>
         </nav>
@@ -46,3 +42,5 @@ const Header = () => {
 };
 
 export default Header;
+
+

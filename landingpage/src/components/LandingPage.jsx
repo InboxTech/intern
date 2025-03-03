@@ -5,12 +5,27 @@ import TravelDeals from "./TravelDeals";
 import Footer from "./Footer";
 import TravelersCabinClass from "./TravelersCabinClass";
 
+const images = [
+  "/images/samuel-ferrara-1527pjeb6jg-unsplash.jpg",
+  "/images/daniel-leone-g30P1zcOzXo-unsplash.jpg",
+  "/images/benjamin-voros-phIFdC6lA4E-unsplash.jpg",
+  "/images/kalen-emsley-Bkci_8qcdvQ-unsplash.jpg"
+];
+
 const LandingPage = () => {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
-  const [cities, setCities] = useState([]);
-  const [filteredCities, setFilteredCities] = useState([]);
-  const [activeField, setActiveField] = useState(null);
+  const [currentImage, setCurrentImage] = useState(0);
+  // const [cities, setCities] = useState([]);
+  // const [filteredCities, setFilteredCities] = useState([]);
+  // const [activeField, setActiveField] = useState(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleSwap = () => {
     setFrom(to);
@@ -18,34 +33,34 @@ const LandingPage = () => {
   };
 
    // Fetch city and airport data from API
-   useEffect(() => {
-    const fetchCities = async () => {
-      try {
-        const response = await fetch("https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"); // API
-        const data = await response.json();
-        setCities(data);
-      } catch (error) {
-        console.error("Error fetching cities:", error);
-      }
-    };
-    fetchCities();
-  }, []);
+  //  useEffect(() => {
+  //   const fetchCities = async () => {
+  //     try {
+  //       const response = await fetch("SjlJdnQ1ZVFEVjlRNFJheEJaTWdCeHRZY3FuNTdGTjRpaHM5YjVudg=="); // API
+  //       const data = await response.json();
+  //       setCities(data);
+  //     } catch (error) {
+  //       console.error("Error fetching cities:", error);
+  //     }
+  //   };
+  //   fetchCities();
+  // }, []);
 
   // Filter cities based on input
-  const handleCitySearch = (input, setFunction, field) => {
-    setFunction(input);
-    setActiveField(field); // Track which field is active for dropdown display
-    if (input.length > 1) {
-      const filtered = cities.filter(
-        (city) =>
-          city.name.toLowerCase().includes(input.toLowerCase()) ||
-          city.code.toLowerCase().includes(input.toLowerCase())
-      );
-      setFilteredCities(filtered);
-    } else {
-      setFilteredCities([]);
-    }
-  };
+  // const handleCitySearch = (input, setFunction, field) => {
+  //   setFunction(input);
+  //   setActiveField(field);
+  //   if (input.length > 1) {
+  //     const filtered = cities.filter(
+  //       (city) =>
+  //         city.name.toLowerCase().includes(input.toLowerCase()) ||
+  //         city.code.toLowerCase().includes(input.toLowerCase())
+  //     );
+  //     setFilteredCities(filtered);
+  //   } else {
+  //     setFilteredCities([]);
+  //   }
+  // };
 
   return (
     <div className="relative min-h-screen">
@@ -54,11 +69,12 @@ const LandingPage = () => {
 
       {/* Hero Section */}
       <section
-        className="px-12 py-10 h-screen bg-cover bg-center flex items-center justify-center pt-20"
+        className="px-12 py-10 h-screen bg-cover bg-center flex items-center justify-center pt-20 object-cover"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbmV8ZW58MHx8MHx8fDA%3D')",
+          backgroundImage: "url('https://i.pinimg.com/474x/41/0a/22/410a226d01a8747fe75a3b46d00d3c5a.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          objectFit: "cover"
         }}
       >
         {/* Overlay */}
@@ -89,7 +105,7 @@ const LandingPage = () => {
                 className="w-full p-3 border rounded"
                 required
               />
-               {activeField === "from" && filteredCities.length > 0 && (
+               {/* {activeField === "from" && filteredCities.length > 0 && (
                   <ul className="absolute w-full bg-white border mt-1 rounded shadow-lg z-50">
                     {filteredCities.map((city) => (
                       <li
@@ -100,11 +116,11 @@ const LandingPage = () => {
                           setFilteredCities([]);
                         }}
                       >
-                        ✈️ <span className="ml-2 font-semibold">{city.name} ({city.code})</span>
+                        <span className="ml-2 font-semibold">{city.name} ({city.code})</span>
                       </li>
                     ))}
                   </ul>
-                )}
+                )} */}
 
             </div>
 
@@ -130,7 +146,7 @@ const LandingPage = () => {
                 className="w-full p-3 border rounded"
                 required
               />
-               {activeField === "to" && filteredCities.length > 0 && (
+               {/* {activeField === "to" && filteredCities.length > 0 && (
                   <ul className="absolute w-full bg-white border mt-1 rounded shadow-lg z-50">
                     {filteredCities.map((city) => (
                       <li
@@ -141,11 +157,11 @@ const LandingPage = () => {
                           setFilteredCities([]);
                         }}
                       >
-                        ✈️ <span className="ml-2 font-semibold">{city.name} ({city.code})</span>
+                        <span className="ml-2 font-semibold">{city.name} ({city.code})</span>
                       </li>
                     ))}
                   </ul>
-                )}
+                )} */}
 
             </div>
             </div>
@@ -221,11 +237,9 @@ const LandingPage = () => {
 
         {/* Banner */}
         <div className="relative bg-gray-200 rounded-2xl overflow-hidden shadow-lg">
-          <img
-            src="/images/samuel-ferrara-1527pjeb6jg-unsplash.jpg"
-            alt="Scenic view"
-            className="w-full h-120 object-cover"
-          />
+        <img src={images[currentImage]} 
+        alt="Scenic view" 
+        className="w-full h-120 object-cover transition-opacity duration-500 ease-in-out" />
           {/* Text Content */}
           <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center px-6 text-white bg-black/50">
             <p className="text-lg uppercase">Grab a deal</p>
@@ -236,7 +250,7 @@ const LandingPage = () => {
               Score cheaper seats with Price Alerts
             </p>
             <button className="p-1 w-30 mt-5 bg-white text-black rounded-2xl font-semibold shadow-md hover:bg-gray-500 cursor-pointer"
-            onClick={() => alert("How it works!")}>
+            onClick={() => alert("How it works clicked!")}>
               How it works
             </button>
           </div>

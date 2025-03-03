@@ -8,17 +8,25 @@ import "swiper/css/pagination";
 const destinations = [
   { image: "/images/Editable India Boarding Pass Plane ticket.jpeg", city: "TajMahal, India" },
   { image: "/images/Editable Paris Plane Boarding Pass Ticket.jpeg", city: "Paris, France" },
-  { image: "/images/download.jpeg", city: "New York, USA" },
+  { image: "/images/Editable New York Boarding Pass Plane ticket.jpeg", city: "New York, USA" },
   { image: "/images/Surprise Tokyo Boarding Pass Gift Certificate Inv.jpeg", city: "Tokyo, Japan" },
   { image: "/images/Editable Dubai Boarding Pass Plane ticket.jpeg", city: "Dubai, UAE" },
-  { image: "/images/London Boarding pass printed and personalised.jpeg", city: "London, UK" },
-  { image: "/images/Berlin personalised ticket, personalised boarding pass gift, surprise holiday reveal ideas, personalised plane ticket, birthday gift, ST-02.jpeg", city: "Berlin, Germany" },
+  { image: "/images/Editable London Plane Boarding Pass Ticket.jpeg", city: "London, UK" },
+  { image: "/images/Editable Canada Boarding Pass Plane ticket.jpeg", city: "Toronto, Canada" },
+  { image: "/images/Editable Australia Boarding Pass Plane ticket.jpeg", city: "Sydney, Australia" },
+  { image: "/images/Surprise Berlin Plane Boarding Pass Ticket.jpeg", city: "Berlin, Germany" },
+  { image: "/images/Editable Singapore Plane ticket, Singapore Trip.jpeg", city: "Singapore" },
+  { image: "/images/Editable New Zealand Plane ticket, New Zealand.jpeg", city: "New Zealand" },
+  { image: "/images/Editable Switzerland Plane ticket, Switzerland Invitation _ Zazzle.jpeg", city: "Switzerland" },
+  { image: "/images/Editable Oslo Plane ticket, Norway Trip.jpeg", city: "Oslo, Norway" },
+  { image: "/images/Editable Greece Boarding Pass Plane ticket.jpeg", city: "Greece" },
+  { image: "/images/Editable Bali Plane ticket, Bali Trip.jpeg", city: "Bali, Indonesia" },
 ];
 
 const TravelDeals = () => {
   return (
     <section className="py-20 bg-gray-100">
-      <h2 className="text-center text-3xl font-bold mb-6">Popular Destinations</h2>
+      <h2 className="text-center text-3xl font-bold mb-6 text-black">Popular Destinations</h2>
 
       <div className="max-w-6xl mx-auto">
         <Swiper
@@ -26,7 +34,7 @@ const TravelDeals = () => {
           spaceBetween={30}
           slidesPerView={1}
           navigation
-          pagination={{ clickable: true }}
+          pagination={{ clickable: true, dynamicBullets: true }}
           autoplay={{ delay: 3000 }}
           breakpoints={{
             640: { slidesPerView: 1 },
@@ -35,6 +43,22 @@ const TravelDeals = () => {
           }}
           className="rounded-lg overflow-hidden"
         >
+          <style>
+        {`
+          .swiper-pagination-bullet {
+            background-color: darkblue !important; 
+            opacity: 0.5;
+          }
+          .swiper-pagination-bullet-active {
+            background-color: darkblue !important;
+            opacity: 1;
+          }
+          .swiper-button-next, .swiper-button-prev {
+            color: darkblue !important;
+          }
+        `}
+      </style>
+
           {destinations.map((dest, index) => (
             <SwiperSlide key={index} className="relative group">
               {/* Destination Image */}
