@@ -1,0 +1,5 @@
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(40%) sepia(40%) saturate(60%) hue-rotate(320deg); /* Adjust color */
+    cursor: pointer;
+  }
+  
