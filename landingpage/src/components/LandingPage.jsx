@@ -4,6 +4,9 @@ import Header from "./Header";
 import TravelDeals from "./TravelDeals";
 import Footer from "./Footer";
 import TravelersCabinClass from "./TravelersCabinClass";
+import FAQSection from "./FAQSection";
+import { FaHotel, FaCar, FaSearchLocation } from "react-icons/fa";
+
 
 const images = [
   "/images/samuel-ferrara-1527pjeb6jg-unsplash.jpg",
@@ -12,13 +15,19 @@ const images = [
   "/images/kalen-emsley-Bkci_8qcdvQ-unsplash.jpg"
 ];
 
+
 const LandingPage = () => {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [currentImage, setCurrentImage] = useState(0);
-  // const [cities, setCities] = useState([]);
-  // const [filteredCities, setFilteredCities] = useState([]);
-  // const [activeField, setActiveField] = useState(null);
+  const [filteredCities, setFilteredCities] = useState([]);
+  const [activeField, setActiveField] = useState(null);
+  const [countries, setCountries] = useState([]);
+  const [citiesByCountry, setCitiesByCountry] = useState({});
+  const API_KEY = "SjlJdnQ1ZVFEVjlRNFJheEJaTWdCeHRZY3FuNTdGTjRpaHM5YjVudg==";
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedCity, setSelectedCity] = useState("");
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,35 +41,76 @@ const LandingPage = () => {
     setTo(from);
   };
 
-   // Fetch city and airport data from API
-  //  useEffect(() => {
-  //   const fetchCities = async () => {
-  //     try {
-  //       const response = await fetch("SjlJdnQ1ZVFEVjlRNFJheEJaTWdCeHRZY3FuNTdGTjRpaHM5YjVudg=="); // API
-  //       const data = await response.json();
-  //       setCities(data);
-  //     } catch (error) {
-  //       console.error("Error fetching cities:", error);
-  //     }
-  //   };
-  //   fetchCities();
-  // }, []);
 
-  // Filter cities based on input
-  // const handleCitySearch = (input, setFunction, field) => {
-  //   setFunction(input);
-  //   setActiveField(field);
-  //   if (input.length > 1) {
-  //     const filtered = cities.filter(
-  //       (city) =>
-  //         city.name.toLowerCase().includes(input.toLowerCase()) ||
-  //         city.code.toLowerCase().includes(input.toLowerCase())
-  //     );
-  //     setFilteredCities(filtered);
-  //   } else {
-  //     setFilteredCities([]);
-  //   }
-  // };
+   //Fetch city and airport data from API
+   useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const response = await fetch("https://api.countrystatecity.in/v1/countries", {
+          headers: {
+            "X-CSCAPI-KEY": "SjlJdnQ1ZVFEVjlRNFJheEJaTWdCeHRZY3FuNTdGTjRpaHM5YjVudg==", 
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("Fetched Countries:", data);
+        setCountries(data);
+      } catch (error) {
+        console.error("Error fetching countries:", error);
+      }
+    };
+
+    fetchCountries();
+  }, []);
+
+   // Fetch all cities for each country
+   useEffect(() => {
+    if (countries.length === 0) return;
+
+    const fetchCitiesForAllCountries = async () => {
+      try {
+        const cityRequests = countries.map((country) =>
+          fetch(`https://api.countrystatecity.in/v1/countries/${country.iso2}/cities`, {
+            headers: { "X-CSCAPI-KEY": "SjlJdnQ1ZVFEVjlRNFJheEJaTWdCeHRZY3FuNTdGTjRpaHM5YjVudg==" },
+          })
+            .then((res) => res.json())
+            .then((cities) => ({ country: country.iso2, cities }))
+        );
+
+        const allCities = await Promise.all(cityRequests);
+        const cityData = allCities.reduce((acc, { country, cities }) => {
+          acc[country] = cities;
+          return acc;
+        }, {});
+
+        console.log("Fetched Cities by Country:", cityData);
+        setCitiesByCountry(cityData);
+      } catch (error) {
+        console.error("Error fetching cities:", error);
+      }
+    };
+
+    fetchCitiesForAllCountries();
+  }, [countries]);
+  
+
+   // Filter cities dynamically as user types
+   const handleCitySearch = (input, field) => {
+    setActiveField(field);
+    if (input.length > 1) {
+      const allCities = Object.values(citiesByCountry).flat();
+      const filtered = allCities.filter((city) =>
+        city.name.toLowerCase().includes(input.toLowerCase())
+      );
+      setFilteredCities(filtered);
+    } else {
+      setFilteredCities([]);
+    }
+  };
 
   return (
     <div className="relative min-h-screen">
@@ -78,7 +128,7 @@ const LandingPage = () => {
         }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 bg-black opacity-50 z-0 pointer-events-none"></div>
 
         {/* Content */}
         <div className="relative z-10 text-center px-4">
@@ -92,39 +142,24 @@ const LandingPage = () => {
           {/* Search Form */}
           <form className="bg-gray-300 rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
           <div className="flex items-center space-x-2">
-            <div className="flex-1">
-              <label className="block text-black mb-1" htmlFor="from">
-                From
+          <div className="flex-1">
+              <label className="block text-black mb-1" htmlFor="country">
+                Select Country
               </label>
-              <input
-                type="text"
-                id="from"
-                value={from}
-                onChange={(e) => setFrom(e.target.value)}
-                placeholder="Departure city"
+              <select
+                id="country"
+                value={selectedCountry}
+                onChange={(e) => setSelectedCountry(e.target.value)}
                 className="w-full p-3 border rounded"
-                required
-              />
-               {/* {activeField === "from" && filteredCities.length > 0 && (
-                  <ul className="absolute w-full bg-white border mt-1 rounded shadow-lg z-50">
-                    {filteredCities.map((city) => (
-                      <li
-                        key={city.code}
-                        className="p-2 cursor-pointer hover:bg-gray-200 flex items-center"
-                        onClick={() => {
-                          setFrom(`${city.name} (${city.code})`);
-                          setFilteredCities([]);
-                        }}
-                      >
-                        <span className="ml-2 font-semibold">{city.name} ({city.code})</span>
-                      </li>
-                    ))}
-                  </ul>
-                )} */}
-
+              >
+                <option value="">Select a country</option>
+                {countries.map((country) => (
+                  <option key={country.iso2} value={country.iso2}>
+                    {country.name}
+                  </option>
+                ))}
+              </select>
             </div>
-
-            {/* Swap Button */}
             <button
               type="button"
               onClick={handleSwap}
@@ -133,37 +168,69 @@ const LandingPage = () => {
               <ArrowLeftRight size={20} />
             </button>
 
-            <div className="flex-1">
-              <label className="block text-black mb-1" htmlFor="to">
-                To
-              </label>
-              <input
-                type="text"
-                id="to"
-                value={to}
-                onChange={(e) => setTo(e.target.value)}
-                placeholder="Destination city"
-                className="w-full p-3 border rounded"
-                required
-              />
-               {/* {activeField === "to" && filteredCities.length > 0 && (
-                  <ul className="absolute w-full bg-white border mt-1 rounded shadow-lg z-50">
-                    {filteredCities.map((city) => (
-                      <li
-                        key={city.code}
-                        className="p-2 cursor-pointer hover:bg-gray-200 flex items-center"
-                        onClick={() => {
-                          setTo(`${city.name} (${city.code})`);
-                          setFilteredCities([]);
-                        }}
-                      >
-                        <span className="ml-2 font-semibold">{city.name} ({city.code})</span>
-                      </li>
-                    ))}
-                  </ul>
-                )} */}
+          <div className="flex-1">
+            <label className="block text-black mb-1" htmlFor="city">
+              Select City
+            </label>
+            <select
+              id="city"
+              value={selectedCity}
+              onChange={(e) => setSelectedCity(e.target.value)}
+              className="w-full p-3 border rounded"
+              disabled={!selectedCountry}
+            >
+              <option value="">Select a city</option>
+              {selectedCountry &&
+                citiesByCountry[selectedCountry]?.map((city) => (
+                  <option key={city.id} value={city.name}>
+                    {city.name}
+                  </option>
+                ))}
+            </select>
+          </div>
 
-            </div>
+            {/* Swap Button */}
+           
+            {/* <div className="flex-1">
+                <label className="block text-black mb-1" htmlFor="country">
+                  Select Country
+                </label>
+                <select
+                  id="country"
+                  value={selectedCountry}
+                  onChange={(e) => setSelectedCountry(e.target.value)}
+                  className="w-full p-3 border rounded"
+                >
+                  <option value="">Select a country</option>
+                  {countries.map((country) => (
+                    <option key={country.iso2} value={country.iso2}>
+                      {country.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+                <div className="flex-1">
+                  <label className="block text-black mb-1" htmlFor="city">
+                    Select City
+                  </label>
+                  <select
+                    id="city"
+                    value={selectedCity}
+                    onChange={(e) => setSelectedCity(e.target.value)}
+                    className="w-full p-3 border rounded"
+                    disabled={!selectedCountry}
+                  >
+                    <option value="">Select a city</option>
+                    {selectedCountry &&
+                      citiesByCountry[selectedCountry]?.map((city) => (
+                        <option key={city.id} value={city.name}>
+                          {city.name}
+                        </option>
+                      ))}
+                  </select>
+                </div> */}
+
             </div>
 
             <div className="flex-1">
@@ -223,15 +290,18 @@ const LandingPage = () => {
         <div className="flex justify-center space-x-6 mt-5 mb-8 relative">
           <button className="bg-[#031B3D] text-white px-30 py-3 rounded-lg flex items-center space-x-2 shadow-md hover:bg-blue-900 cursor-pointer"
           onClick={() => alert("Hotels clicked!")}>
-            <span>🏨 Hotels</span>
+            <FaHotel />
+            <span>Hotels</span>
           </button>
           <button className="bg-[#031B3D] text-white px-30 py-3 rounded-lg flex items-center space-x-2 shadow-md hover:bg-blue-900 cursor-pointer"
           onClick={() => alert("Car hire clicked!")}>
-            <span>🚗 Car hire</span>
+            <FaCar /> 
+            <span>Car hire</span>
           </button>
           <button className="bg-[#031B3D] text-white px-30 py-3 rounded-lg flex items-center space-x-2 shadow-md hover:bg-blue-900   cursor-pointer"
           onClick={() => alert("Explore everywhere clicked!")}>
-            <span>🔍 Explore everywhere</span>
+            <FaSearchLocation />
+            <span>Explore everywhere</span>
           </button>
         </div>
 
@@ -261,6 +331,9 @@ const LandingPage = () => {
 
       {/* Swiper Section */}
       <TravelDeals />
+
+     {/* FAQs */}
+     <FAQSection />
 
       {/* Footer Section */}
       <Footer />
