@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const TravelersCabinClass = () => {
+const TravelersCabinClass = ({ className }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [adults, setAdults] = useState(2);
   const [children, setChildren] = useState(0);
@@ -27,7 +27,9 @@ const TravelersCabinClass = () => {
       {/* Dropdown Button */}
     <button
         onClick={toggleDropdown}
-        className="px-4 py-0.5 border rounded-lg flex flex-col w-64 text-left mt-6.5"
+        className={`px-4 py-0.5 cursor-pointer border rounded-lg flex flex-col w-64 text-left mt-6.5 transition-all
+          ${className === "multi-city-travelers" ? "bg-gray-300 shadow-lg" : "bg-gray-300"}
+        `}
     >
         <span className="font-semibold">Travellers and cabin class</span>
         <span className="text-gray-600 text-sm">
