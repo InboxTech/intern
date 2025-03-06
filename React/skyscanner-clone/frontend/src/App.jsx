@@ -1,13 +1,21 @@
-import React from 'react';
-import FlightList from './components/flights';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import Login from "./pages/Login";
+import SignUp from "./pages/Signup";
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <h1>React and Python Backend</h1>
-      <FlightList />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </div>
+    </Router>
   );
-};
+}
 
 export default App;
