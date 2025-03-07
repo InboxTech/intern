@@ -1,80 +1,137 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { FaBars, FaPlane, FaHotel, FaCar, FaFlag, FaSearchLocation, FaQuestionCircle } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { FaGlobe, FaUser, FaBars, FaHeart, FaPlane, FaHotel, FaCar, FaFlag, FaSearchLocation, FaQuestionCircle } from "react-icons/fa";
+import logo from "../assets/image/logo2.png"; // Ensure your logo is stored here
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link } from "react-router-dom"; 
 
-const Header = () => {
+export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("flights");
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  useEffect(() => {
+    console.log("Current path:", location.pathname);
+  }, [location]);
+
   return (
-    <header className="bg-blue-950 shadow-md fixed top-0 left-0 w-full z-50">
-      <div className="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
-        {/* Logo */}
-        <a href="/" className="flex items-center space-x-2 text-2xl font-bold text-blue-400 hover:text-blue-700">
-          <img src="/images/Skyscanner Logo.png" alt="Skyscanner Logo" className="w-8 h-7" />
-          <span>Skyscanner</span>
-        </a>
+    <div>
+      {/* Navbar */}
+      <header className="flex justify-between items-center p-6 bg-[#06152B] text-white relative">
+        {/* Logo and Title */}
+        <div className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3 cursor-pointer">
+          <img src={logo} alt="Skyscanner Logo" className="h-10 w-auto" />
+          <span className="text-2xl font-bold font-serif">Tripglide</span>
+        </Link>
+        </div>
 
-        {/* Navigation Links */}
-        <nav className="hidden md:flex space-x-6">
-          <a href="/" className="text-white hover:text-blue-600">Flights</a>
-          <a href="/" className="text-white hover:text-blue-600">Hotels</a>
-          <a href="/" className="text-white hover:text-blue-600">Car Hire</a>
-          <a href="/" className="text-white hover:text-blue-600">Deals</a>
-        </nav>
+        {/* Icons + Log In + Dropdown */}
+        <div className="flex items-center gap-4">
+          {/* Globe Icon */}
+          <div className="p-2 rounded-lg hover:bg-gray-600 transition-colors duration-300 cursor-pointer">
+            <FaGlobe />
+          </div>
 
-         {/* Login / Sign Up + Menu Bar */}
-         <div className="flex items-center space-x-4">
-          <Link to="/login" className="text-white hover:text-blue-600 cursor-pointer">Login</Link>
-          <Link to="/signup" className="bg-blue-600 text-white px-4 py-1 rounded-lg hover:bg-blue-700 cursor-pointer">Sign Up</Link>
-          {/* Menu Bar */}
-          <button
-            className="p-2 rounded-lg hover:bg-gray-600 transition-colors duration-300 cursor-pointer"
-            onClick={toggleDropdown}
+          {/* Heart Icon */}
+          <div className="p-2 rounded-lg hover:bg-gray-600 transition-colors duration-300 cursor-pointer">
+            <FaHeart />
+          </div>
+
+          {/* User Icon with Log In Text */}
+          <div
+            className="flex items-center gap-1 p-2 rounded-lg hover:bg-gray-600 transition-colors duration-300 cursor-pointer"
+            onClick={() => navigate("/login")} // Navigate to Login page
           >
-            <FaBars className="text-white text-2xl" />
-          </button>
-        </div>
-      </div>
-
-      {/* Dropdown Menu */}
-      {isDropdownOpen && (
-        <div className="absolute top-16 right-0 w-56 bg-white text-black shadow-lg rounded-xl z-10">
-          {/* Top Section */}
-          <div className="py-2">
-            <a href="/" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
-              <FaPlane className="text-blue-500"/> Flights
-            </a>
-            <a href="/" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
-              <FaHotel className="text-blue-500" /> Hotels
-            </a>
-            <a href="/" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
-              <FaCar className="text-blue-500" /> Car hire
-            </a>
+            <FaUser />
+            <span>Log in</span>
           </div>
 
-          {/* Divider */}
-          <hr className="border-t border-gray-300" />
+          {/* Dropdown Menu Trigger */}
+          <div className="relative">
+            <div
+              className="p-2 rounded-lg hover:bg-gray-600 transition-colors duration-300 cursor-pointer"
+              onClick={toggleDropdown}
+            >
+              <FaBars />
+            </div>
 
-          {/* Bottom Section */}
-          <div className="py-2">
-            <a href="/" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
-              <FaFlag /> Regional settings
-            </a>
-            <a href="/" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
-              <FaSearchLocation className="text-[#0c828b]" /> Explore everywhere
-            </a>
-            <a href="/" className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
-              <FaQuestionCircle className="text-[#0c828b]" /> Help
-            </a>
+            {/* Dropdown Menu */}
+            {isDropdownOpen && (
+              <div className="absolute right-0 mt-3 w-56 bg-white text-black shadow-lg rounded-xl z-10">
+                {/* Top Section */}
+                <div className="py-2">
+                  <a
+                    href="/"
+                    className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition-colors duration-300"
+                  >
+                    <FaPlane className="text-blue-500" /> Flights
+                  </a>
+                  <a
+                    href="#"
+                    className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition-colors duration-300"
+                  >
+                    <FaHotel className="text-blue-500" /> Hotels
+                  </a>
+                  <a
+                    href="#"
+                    className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition-colors duration-300"
+                  >
+                    <FaCar className="text-blue-500" /> Car hire
+                  </a>
+                </div>
+
+                {/* Divider */}
+                <hr className="border-t border-gray-300" />
+
+                {/* Bottom Section */}
+                <div className="py-2">
+                  <a
+                    href="#"
+                    className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition-colors duration-300"
+                  >
+                    <FaFlag /> Regional settings
+                  </a>
+                  <a
+                    href="#"
+                    className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition-colors duration-300"
+                  >
+                    <FaSearchLocation className="text-[#0c828b]" /> Explore everywhere
+                  </a>
+                  <a
+                    href="#"
+                    className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition-colors duration-300"
+                  >
+                    <FaQuestionCircle className="text-[#0c828b]" /> Help
+                  </a>
+                </div>
+              </div>
+            )}
           </div>
         </div>
-      )}
-    </header>
+      </header>
+
+        {/* Tabs Section - Now rendered below the navbar */}
+        <div className="flex gap-4 px-6 py-4 bg-[#06152B] text-white">
+      {["flights", "hotels", "carhire"].map((tab) => (
+        <Link 
+          key={tab} 
+          to={`/${tab}`} 
+          onClick={() => setActiveTab(tab)} // Move onClick here
+          className={`flex items-center cursor-pointer gap-2 px-4 py-2 rounded-full border border-white transition-transform duration-300 hover:scale-105 hover:bg-blue-600 ${
+            activeTab === tab ? "bg-blue-600" : "bg-gray-800"
+          }`}
+        >
+          {tab === "flights" && <FaPlane />}
+          {tab === "hotels" && <FaHotel />}
+          {tab === "carhire" && <FaCar />}
+          {tab.charAt(0).toUpperCase() + tab.slice(1)}
+        </Link>
+      ))}
+    </div>
+    </div>
   );
-};
-
-export default Header;
+}

@@ -1,62 +1,51 @@
-import React from "react";
+import { FaInstagram, FaTwitter, FaMedium } from "react-icons/fa";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="bg-blue-950 text-white py-10 relative z-50">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* About */}
-          <div>
-            <h3 className="text-xl font-semibold mb-3 text-white">About Skyscanner</h3>
-            <p className="text-sm">
-              Skyscanner helps travelers find cheap flights, hotels, and car rentals worldwide.
-            </p>
-          </div>
+    <footer className="bg-[#06152B] text-white p-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex justify-between flex-wrap">
+          <button className="bg-[#1A2C47] text-white px-6 py-3 rounded-lg">India · English (UK) · ₹ INR</button>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-semibold mb-3 text-white ml-30">Quick Links</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="hover:text-blue-400 transition-colors ml-30">Flights</a></li>
-              <li><a href="#" className="hover:text-blue-400 transition-colors ml-30">Hotels</a></li>
-              <li><a href="#" className="hover:text-blue-400 transition-colors ml-30">Car Hire</a></li>
-            </ul>
-          </div>
+          <div className="flex gap-16">
+            <div className="flex flex-col gap-4">
+              <a href="#" className="hover:underline">Help</a>
+              <a href="#" className="hover:underline">Privacy Settings</a>
+              <a href="/login" className="hover:underline">Log in</a>
+              {/* Social Media Icons */}
+              <div className="flex gap-4 mt-1">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"  className="hover:text-[#E4405F] transition-colors duration-300">
+                  <FaInstagram size={20} />
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"  className="hover:text-[#1DA1F2] transition-colors duration-300">
+                  <FaTwitter size={20} />
+                </a>
+                <a href="https://medium.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors duration-300">
+                  <FaMedium size={20} />
+                </a>
+              </div>
+            </div>
 
-          {/* Social Media */}
-          <div className="pointer-events-auto">
-            <h3 className="text-xl font-semibold mb-3 text-white ml-20">Follow Us</h3>
-            <div className="flex space-x-4 ml-20">
-              <a href="https://www.facebook.com/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="hover:text-blue-400 transition-colors cursor-pointer z-50">
-                Facebook
-              </a>
-              <a href="https://x.com/home?lang=en"
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="hover:text-blue-400 transition-colors cursor-pointer z-50">
-                Twitter
-              </a>
-              <a href="https://www.instagram.com/?hl=en" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="hover:text-blue-400 transition-colors cursor-pointer z-50">
-                Instagram
-              </a>
+            <div className="flex flex-col gap-4">
+              <a href="#" className="hover:underline">Cookie policy</a>
+              <a href="#" className="hover:underline">Privacy policy</a>
+              <a href="#" className="hover:underline">Terms of service</a>
+              <a href="#" className="hover:underline">Company Details</a>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <a href="#" className="hover:underline">Explore</a>
+              <a href="#" className="hover:underline">Company</a>
+              <a href="#" className="hover:underline">Partners</a>
+              <a href="#" className="hover:underline">Trips</a>
             </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="text-center mt-6 text-sm text-white">
-          &copy; 2025 Skyscanner. All rights reserved.
+        <div className="text-center mt-8">
+          © Tripglide Ltd 2025
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

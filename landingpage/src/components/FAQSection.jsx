@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 
 const faqs = [
-  { question: "How does Skyscanner work?", answer: "We’re a flight, car hire and hotel search engine. We scan all the top airlines and travel providers across the net, so you can compare flight fares and other travel costs in one place. Once you’ve found the best flight, car hire or hotel, you book directly with the provider." },
-  { question: "How can I find the cheapest flight using Skyscanner?", answer: "Use our filters and flexible date options to compare prices and find the best deal." },
+  { question: "How does Tripglide work?", answer: "We’re a flight, car hire and hotel search engine. We scan all the top airlines and travel providers across the net, so you can compare flight fares and other travel costs in one place. Once you’ve found the best flight, car hire or hotel, you book directly with the provider." },
+  { question: "How can I find the cheapest flight using Tripglide?", answer: "Use our filters and flexible date options to compare prices and find the best deal." },
   { question: "Where should I book a flight to right now?", answer: "Check out our trending destinations and top deals." },
-  { question: "Do I book my flight with Skyscanner?", answer: "No, we redirect you to the airline or travel provider to complete your booking." },
+  { question: "Do I book my flight with Tripglide?", answer: "No, we redirect you to the airline or travel provider to complete your booking." },
   { question: "What happens after I have booked my flight?", answer: "You will receive a confirmation email from the provider you booked with." },
-  { question: "Does Skyscanner do hotels too?", answer: "Yes, you can search and compare hotel prices with us." },
+  { question: "Does Triplide do hotels too?", answer: "Yes, you can search and compare hotel prices with us." },
   { question: "What about car hire?", answer: "We also offer car hire comparisons to find you the best deal." },
   { question: "What’s a Price Alert?", answer: "Price Alerts notify you when flight prices change for your selected route." },
   { question: "Can I book a flexible flight ticket?", answer: "Yes, we have options for flexible tickets that allow changes." },
@@ -27,7 +27,7 @@ const FAQSection = () => {
 
   return (
     <div className="max-w-6xl mx-auto p-4 pointer-events-auto">
-      <h2 className="text-2xl font-bold mb-6">Booking flights with Skyscanner</h2>
+      <h2 className="text-2xl font-bold mb-6">Booking flights with Tripglide</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {faqs.map((faq, index) => (
           <div key={index} className="border-b pb-4">  

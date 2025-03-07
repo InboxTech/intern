@@ -25,10 +25,10 @@ const TravelersCabinClass = ({ className }) => {
   return (
     <div className="relative inline-block">
       {/* Dropdown Button */}
-    <button
+    <button type="button"
         onClick={toggleDropdown}
         className={`px-4 py-0.5 cursor-pointer border rounded-lg flex flex-col w-64 text-left mt-6.5 transition-all
-          ${className === "multi-city-travelers" ? "bg-gray-300 shadow-lg" : "bg-gray-300"}
+          ${className === "multi-city-travelers" ? "bg-white shadow-lg" : "bg-white"}
         `}
     >
         <span className="font-semibold">Travellers and cabin class</span>
@@ -60,7 +60,7 @@ const TravelersCabinClass = ({ className }) => {
           <div className="flex justify-between items-center mb-2">
             <span className="font-semibold">Adults (18+)</span>
             <div className="flex items-center space-x-2">
-              <button
+              <button type="button"
                 className="px-2 py-1 border rounded bg-gray-200"
                 onClick={() => handleAdults(-1)}
               >
@@ -79,7 +79,7 @@ const TravelersCabinClass = ({ className }) => {
           <div className="flex justify-between items-center mb-4">
             <span className="font-semibold">Children (0-17)</span>
             <div className="flex items-center space-x-2">
-              <button
+              <button type="button"
                 className="px-2 py-1 border rounded bg-gray-200"
                 onClick={() => handleChildren(-1)}
               >
@@ -101,7 +101,7 @@ const TravelersCabinClass = ({ className }) => {
           </p>
 
           {/* Apply Button */}
-          <button
+          <button type="button"
             className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700"
             onClick={toggleDropdown}
           >
