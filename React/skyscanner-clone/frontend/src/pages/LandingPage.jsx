@@ -14,7 +14,7 @@ const FlightSearch = () => {
   // Fetch flight data from Node.js API
   useEffect(() => {
     axios
-      .get('http://localhost:5000/tripglide')  // Node.js API URL
+      .get('http://localhost:5000/')  // Node.js API URL
       .then((response) => {
         setFlights(response.data);
         setLoading(false);
@@ -96,7 +96,7 @@ const FlightSearch = () => {
       </form>
 
       {/* Display filtered flight data */}
-      {/* <div>
+      <div>
         <h3>Available Flights:</h3>
         <ul>
           {filteredFlights.map((flight) => (
@@ -105,7 +105,7 @@ const FlightSearch = () => {
             </li>
           ))}
         </ul>
-      </div> */}
+      </div>
     </div>
   );
 };
