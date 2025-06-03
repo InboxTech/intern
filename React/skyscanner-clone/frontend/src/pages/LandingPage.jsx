@@ -26,7 +26,7 @@ const FlightSearch = () => {
   // Fetch flight data from Flask API
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:5000/") // Flask API URL
+      .get('http://localhost:5000/')  // Node.js API URL
       .then((response) => {
         setFlights(response.data);
         setLoading(false);
@@ -199,70 +199,17 @@ const FlightSearch = () => {
         </button>
       </form>
 
-      <section className="px-15 py-18 bg-white">
-        <div className="flex justify-center space-x-6 mt-5 mb-8 relative">
-          <button
-            className="bg-[#031B3D] text-white px-30 py-3 rounded-lg flex items-center space-x-2 shadow-md hover:bg-blue-900 cursor-pointer"
-            onClick={() => alert("Hotels clicked!")}
-          >
-            <span>🏨 Hotels</span>
-          </button>
-          <button
-            className="bg-[#031B3D] text-white px-30 py-3 rounded-lg flex items-center space-x-2 shadow-md hover:bg-blue-900 cursor-pointer"
-            onClick={() => alert("Car hire clicked!")}
-          >
-            <span>🚗 Car hire</span>
-          </button>
-          <button
-            className="bg-[#031B3D] text-white px-30 py-3 rounded-lg flex items-center space-x-2 shadow-md hover:bg-blue-900 cursor-pointer"
-            onClick={() => alert("Explore everywhere clicked!")}
-          >
-            <span>🔍 Explore everywhere</span>
-          </button>
-        </div>
-      </section>
-
-      <hr className="border-blue-900 " />
-
-      <Footer />
-
-      {/* Show flight data only if both "from" and "to" are selected */}
-      {from && to ? (
-        <div>
-          <h3>Available Flights:</h3>
-          {filteredFlights.length > 0 ? (
-            <table className="w-full table-auto border-collapse">
-              <thead>
-                <tr>
-                  <th className="border px-4 py-2">Flight Number</th>
-                  <th className="border px-4 py-2">Departure</th>
-                  <th className="border px-4 py-2">Arrival</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredFlights.map((flight) => (
-                  <tr key={flight.id}>
-                    <td className="border px-4 py-2">{flight.flight_number}</td>
-                    <td className="border px-4 py-2">
-                      {flight.departure_airport}
-                    </td>
-                    <td className="border px-4 py-2">
-                      {flight.arrival_airport}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          ) : (
-            <p>No flights available for the selected cities.</p>
-          )}
-        </div>
-      ) : (
-        <p>
-          Please select both a departure and destination city to view available
-          flights.
-        </p>
-      )}
+      {/* Display filtered flight data */}
+      <div>
+        <h3>Available Flights:</h3>
+        <ul>
+          {filteredFlights.map((flight) => (
+            <li key={flight.id}>
+              {flight.flight_number} from {flight.departure_airport} to {flight.arrival_airport}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
