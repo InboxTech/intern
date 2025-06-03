@@ -3,7 +3,7 @@ const mysql = require("mysql2");
 const cors = require("cors");
 
 const app = express();
-const port = 5000;
+const port = 5001;
 
 // Enable CORS for all domains
 app.use(cors());
@@ -23,11 +23,6 @@ db.connect((err) => {
         return;
     }
     console.log("Connected to the MySQL database");
-});
-
-// Basic route to check if the server is running
-app.get("/", (req, res) => {
-    res.send("Server is running");
 });
 
 // API route to get data from the MySQL database
@@ -53,5 +48,5 @@ app.get("/tripglide", (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+    console.log(`Server running on http://192.168.29.67:${port}`);
 });
